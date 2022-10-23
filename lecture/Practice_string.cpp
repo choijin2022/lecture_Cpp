@@ -1,6 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<cstring>
 #include<string>
+#include"Figures.h"
 
 
 using namespace std;
@@ -71,7 +73,7 @@ int main() {
 	// 출력 로직은 유사
 	*/
 	// verwion 03 = string 이용
-
+	/* ========== 오류가 있는데 아직 생각중 ==========
 	string word;
 	string find;
 	cout << "문자를 입력하세요"<<endl;
@@ -80,28 +82,72 @@ int main() {
 	cin >> find;
 	int find_len = find.length();
 	int count = 0;
-	bool isfinded = false;
-	for (int j = 0; j < find_len; j++){
+	int c_len = 0;
+	
+	// int i = 0; i < word.length() - find_len + 1; i++
+	// int j = 0; j < find_len; j++
+	for (int j = 0; j < find_len; j++) {
 		for (int i = 0; i < word.length() - find_len + 1; i++) {
-			
+			if (c_len > 7) {
+				break;
+			}
 			if (word[i] == find[j]) {
-				for (int n =i+1;n< word.length()- find_len;n++){
-					for (int m = j + 1; m < find_len - 1; m++) {
-						if (word[n] == find[m]) {
-							isfinded = true;
-							++count;
-							
-
-						}
-
+				
+				
+				cout << " word[i] : " << word[i] << "  find[j] : " << find[j] << endl;
+				for (int n = 1; n < find_len; n++) {
+					if (word[i + n] != find[j + n]) {
+						break;
 					}
+					++c_len;
+					cout << "n : " << n << ", i : "<< i << ", j : " << j << endl;
+					cout << " word[i + n] : " << word[i + n] << "  find[j + n] : " << find[j + n] << endl;
+					if (n == find_len - 1) {
+						cout << "c_len : "<<c_len << endl;
+						++count;
+						i = i + find_len;
+					}
+
 				}
 			}
 		}
+
 	}
-	if (ch_start == 0) {
-		cout << "해당 문자는 없습니다." << endl;
+	cout << count << endl;
+
+	*/
+	//5명의 이름을 ';'으로 구분하여 입력하세요.
+	
+	/*
+	char names[100];
+	char longest[100];
+	cout << "이름 입력 :";
+	int length = 0;
+	
+
+	for (int i = 0; i <5; i++) {
+		cin.getline(names, 100, ';');
+		cout << i + 1 << " : " << names << endl;
+		
+		if (length < strlen(names)) {
+			length = strlen(names);
+			strcpy(longest, names);
+		}
 	}
-	cout << find << "는 " << count << "개 있습니다." << endl;
+	cout << "가장 긴 이름은 " << longest << "입니다" << endl;
+	*/
+Circle dounut;
+dounut.radius = 3;
+double area = dounut.getArea();
+cout << "dounut의 면적은 " << area << endl;
+
+Circle pizza;
+pizza.radius = 20;
+area = pizza.getArea();
+cout << "pizza의 면적은 " << area << endl;
+
+Rectangle cellphone(12,10);
+double area1=cellphone.getRectangle();
+cout << "cellphone의 면적은 " << area1 << endl;
 
 }

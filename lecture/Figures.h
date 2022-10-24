@@ -1,37 +1,41 @@
 #pragma once
-
 #include<string>
+using namespace std;
 
 class Circle {
-public:
 	int radius;
+
+public:
+	Circle() {
+		radius = 1;
+	};
+	Circle(int radius);
 	double getArea();
 };
 
-double Circle::getArea() {
-	return 3.14 * radius * radius;
-};
-	
+
+
 class Rectangle
 {
-public:
 	double width;
 	double height;
+public:
 	Rectangle();
 	Rectangle(double width, double height);
+	~Rectangle();
 
 public:
 	double getRectangle();
+	bool isSquare();
 };
-Rectangle::Rectangle() {
-	width = 1;
-	height = 1;
-	
-}
-Rectangle::Rectangle(double width, double height) {
-	this->width = width;
-	this->height = height;
-}
-double Rectangle::getRectangle() {
-	return width * height;
-}
+
+
+class Tower {
+	int height;
+public :
+	Tower();
+	Tower(int height);
+public :
+	int getHeight();
+
+};

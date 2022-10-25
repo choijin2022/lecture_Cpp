@@ -4,6 +4,8 @@
 #include<string>
 #include"Figures.h"
 #include"Util.h"
+#include"Acount.h"
+
 
 using namespace std;
 
@@ -112,9 +114,16 @@ if (eraser.isSquare()) {
 	cout << "높이는 " << myTower.getHeight() << "미터" << endl;
 	cout << "높이는 " << seoulTovwer.getHeight() << "미터" << endl;
 	*/
-
+/*
 Date birth(1994, 01, 18);
 birth.show();
 Date Ghangbok("1945/8/15");
 Ghangbok.show();
+*/
+
+Acount a("choonsik", 1, 5000);
+a.deposit(50000);
+cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
+int money = a.withD(30000);
+cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
 }

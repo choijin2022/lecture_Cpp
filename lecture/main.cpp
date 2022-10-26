@@ -5,7 +5,7 @@
 #include"Figures.h"
 #include"Util.h"
 #include"Acount.h"
-
+#include"Random.h"
 
 using namespace std;
 
@@ -120,10 +120,24 @@ birth.show();
 Date Ghangbok("1945/8/15");
 Ghangbok.show();
 */
-
+/*
 Acount a("choonsik", 1, 5000);
 a.deposit(50000);
 cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
 int money = a.withD(30000);
 cout << a.getOwner() << "의 잔액은 " << a.inquiry() << endl;
+*/
+// 실습 05 
+/*
+랜덤 수를 발생시키는 Random 클래스 작성.
+Random 클래스는 
+생성자, next(), nextInRange()의 멤버함수를 가지도록 작성.
+*/
+cout << "--0에서" << RAND_MAX << "까지의 랜덤 정수 10개 --" << endl;
+Random r;
+
+Random rr(10, 150);
+//r.nextInRange(20, 150);
+
+
 }

@@ -28,10 +28,6 @@ public:
 	void setRadius(int radius);
 	double getArea();
 	int getRadius();
-<<<<<<< HEAD
-	
-=======
->>>>>>> 2395f179bc601c0c14ac9c7482dadf2eb33dc044
 };
 
 void Circle::setRadius(int radius) {
@@ -45,7 +41,3 @@ double Circle::getArea() {
 int Circle::getRadius() {
 	return radius;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2395f179bc601c0c14ac9c7482dadf2eb33dc044

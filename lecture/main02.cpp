@@ -4,6 +4,16 @@
 using namespace std;
 // 주석 : ctrl + k + c
 // 주석해제 : ctrl + k + u
+
+Circle getCircle() {
+	Circle tem(30);
+	return tem;
+}
+void increase(Circle c) {
+	int r = c.getRadius();
+	c.setRadius(r + 1);
+}
+
 int main() {
 	/*
 	* //예제 4-4
@@ -24,84 +34,147 @@ int main() {
 	}
 	*/
 	//예제 4-10
-	
-	/*
-	int number = 0;
-	cout << "원의 갯수를 입력하세요 >> ";
-	cin >> number;
-	Circle *circles= new Circle[number];
-	for (int i = 0; i < number; i++) {
-		int radius;
-		cout << i + 1 << "번 원 반지름 : ";
-		cin >> radius;
-		circles[i].setRadius(radius);
-	}
-	int count = 0;
-	for (int i = 0; i < number; i++) {
-		if (circles[i].getArea() >= 100) {
-			count++;
-		}
-	}
-	
-	cout << "면적이 100이상인 원의 개수 : " << count << endl;
 
-	delete[]circles;
-	*/
-	/*
-	string words[5];
-	for (int i = 0; i < 5; i++) {
-		cout << "단어 입력 << ";
-		getline(cin, words[i]);
+/*
+int number = 0;
+cout << "원의 갯수를 입력하세요 >> ";
+cin >> number;
+Circle *circles= new Circle[number];
+for (int i = 0; i < number; i++) {
+	int radius;
+	cout << i + 1 << "번 원 반지름 : ";
+	cin >> radius;
+	circles[i].setRadius(radius);
+}
+int count = 0;
+for (int i = 0; i < number; i++) {
+	if (circles[i].getArea() >= 100) {
+		count++;
 	}
-	string letter = words[0];
+}
 
-	for (int j = 1; j < 5; j++) {
-		if (letter < words[j]) {
-			letter = words[j];
-			cout << words[j] << endl;
-		}
-		
-		}
-	cout << "가장 뒤에 나오는 문자열은 " << letter << "입니다." << endl;
-	*/
-	/*
-	string s;
-	cout << "문장을 입력하세요 > ";
-	getline(cin, s);
-	int len = s.length();
+cout << "면적이 100이상인 원의 개수 : " << count << endl;
 
-	
-	for (int i = 0; i < len; i++) {
-		string first = s.substr(0, 1);
-		string sub = s.substr(1, len - 1);
-		s = sub + first;
-		cout << s << endl;
-		
+delete[]circles;
+*/
+/*
+string words[5];
+for (int i = 0; i < 5; i++) {
+	cout << "단어 입력 << ";
+	getline(cin, words[i]);
+}
+string letter = words[0];
+
+for (int j = 1; j < 5; j++) {
+	if (letter < words[j]) {
+		letter = words[j];
+		cout << words[j] << endl;
 	}
-	*/
-	//덧셈 문자열을 입력받아 덧셈 실행
-	string s;
-	cout << "덧셈할 문자열을 입력하세요, ex: 1+2+3" << endl << "입력 >> ";
-	getline(cin, s);
-	int sum=0;
-	int starIndex = 0;
-	while (true)
-	{
-		int fIndex = s.find('+', starIndex);
-		if (fIndex == -1) {
-			string part = s.substr(starIndex);
-			if (part == "")
-				break;
-			cout << part << endl;
-			sum += stoi(part);
+
+	}
+cout << "가장 뒤에 나오는 문자열은 " << letter << "입니다." << endl;
+*/
+/*
+string s;
+cout << "문장을 입력하세요 > ";
+getline(cin, s);
+int len = s.length();
+
+
+for (int i = 0; i < len; i++) {
+	string first = s.substr(0, 1);
+	string sub = s.substr(1, len - 1);
+	s = sub + first;
+	cout << s << endl;
+
+}
+*/
+//덧셈 문자열을 입력받아 덧셈 실행
+/*
+string s;
+cout << "덧셈할 문자열을 입력하세요, ex: 1+2+3" << endl << "입력 >> ";
+getline(cin, s);
+int sum=0;
+int starIndex = 0;
+while (true)
+{
+	int fIndex = s.find('+', starIndex);
+	if (fIndex == -1) {
+		string part = s.substr(starIndex);
+		if (part == "")
 			break;
-		}
-		int count = fIndex - starIndex;
-		string part = s.substr(starIndex, count);
 		cout << part << endl;
 		sum += stoi(part);
-		starIndex = fIndex + 1;
-		
+		break;
 	}
-	cout << "숫자들의 합은 " << sum << endl;
+	int count = fIndex - starIndex;
+	string part = s.substr(starIndex, count);
+	cout << part << endl;
+	sum += stoi(part);
+	starIndex = fIndex + 1;
+
 }
+cout << "숫자들의 합은 " << sum << endl;
+*/
+// &가 입력될 때까지 여러 줄의 영문 문자열을 입력받고, 찾는 문자열과 대치할 문자열을 각각 입력받아 문자열을 변경
+/*
+string s;
+cout << "여러 줄의 문자열 입력, 입력 끝은 &문자입니다." << endl;
+getline(cin, s, '&');
+cin.ignore();
+string f, r;
+cout << "find : ";
+getline(cin, f);
+cout << "replace : ";
+getline(cin, r);
+
+int startIndex = 0;
+while (true) {
+	int fIndex = s.find(f, startIndex);
+	if (fIndex == -1)
+		break;
+	s.replace(fIndex, f.length(), r);
+	startIndex = fIndex + r.length();
+
+	}
+	cout << s << endl;
+	*/
+/*
+	string words = "I like cat and dog";
+	string fstr = "cat";
+	string rstr = "cat named choonsik";
+	cout << "변경전 : " << words << endl;
+	words.replace(words.find(fstr), fstr.length(), rstr);
+	cout<< "변경후 : " << words << endl;
+	*/
+
+/*
+	Circle waffle(30);
+	increase(waffle);
+	cout << waffle.getRadius() << endl;
+	*/
+/*
+	Circle c;
+	c = getCircle();
+	cout << c.getArea() << endl;
+	*/
+//참조변수
+cout << "i" << '\t' << "n" << '\t' << "refn" << endl;
+int i = 1;
+int n = 2;
+int& refn = n;
+n = 4;
+refn++;
+cout << i << '\t' << n << '\t' << refn << endl;
+refn = 50;
+cout << i << '\t' << n << '\t' << refn << endl;
+	if (&n == &refn) {
+		cout << "같음" << endl;
+	}
+	int* p = &refn;
+	if (&n == p) {
+		cout << "p도 같음" << endl;
+	}
+
+}
+

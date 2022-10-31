@@ -28,6 +28,7 @@ public:
 	void setRadius(int radius);
 	double getArea();
 	int getRadius();
+	
 };
 
 void Circle::setRadius(int radius) {
@@ -41,3 +42,4 @@ double Circle::getArea() {
 int Circle::getRadius() {
 	return radius;
 }
+

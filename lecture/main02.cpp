@@ -5,10 +5,6 @@ using namespace std;
 // 주석 : ctrl + k + c
 // 주석해제 : ctrl + k + u
 
-Circle getCircle() {
-	Circle tem(30);
-	return tem;
-}
 void increase(Circle c) {
 	int r = c.getRadius();
 	c.setRadius(r + 1);
@@ -148,33 +144,10 @@ while (true) {
 	cout<< "변경후 : " << words << endl;
 	*/
 
-/*
+
 	Circle waffle(30);
 	increase(waffle);
 	cout << waffle.getRadius() << endl;
-	*/
-/*
-	Circle c;
-	c = getCircle();
-	cout << c.getArea() << endl;
-	*/
-//참조변수
-cout << "i" << '\t' << "n" << '\t' << "refn" << endl;
-int i = 1;
-int n = 2;
-int& refn = n;
-n = 4;
-refn++;
-cout << i << '\t' << n << '\t' << refn << endl;
-refn = 50;
-cout << i << '\t' << n << '\t' << refn << endl;
-	if (&n == &refn) {
-		cout << "같음" << endl;
-	}
-	int* p = &refn;
-	if (&n == p) {
-		cout << "p도 같음" << endl;
-	}
 
 }
 

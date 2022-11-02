@@ -1,18 +1,12 @@
 #include<iostream>
 #include<string>
 #include"Circle.h"
+#include"Util2.h"
 using namespace std;
 // 주석 : ctrl + k + c
 // 주석해제 : ctrl + k + u
 
-Circle getCircle() {
-	Circle tem(30);
-	return tem;
-}
-void increase(Circle c) {
-	int r = c.getRadius();
-	c.setRadius(r + 1);
-}
+
 
 int main() {
 	/*
@@ -159,6 +153,7 @@ while (true) {
 	cout << c.getArea() << endl;
 	*/
 //참조변수
+/*
 cout << "i" << '\t' << "n" << '\t' << "refn" << endl;
 int i = 1;
 int n = 2;
@@ -175,6 +170,32 @@ cout << i << '\t' << n << '\t' << refn << endl;
 	if (&n == p) {
 		cout << "p도 같음" << endl;
 	}
+	*/
+/*
+	Circle circle;
+	Circle& refc = circle;
+	refc.setRadius(10);
+	cout << refc.getArea()<<"\t"<<circle.getArea()<<endl;
+	*/
+	/*
+	int a = 10;
+	int b = 20;
+	cout << a << "\t" << b << endl;
+	swap(a, b);
+	cout << a << "\t" << b << endl;
+	*/
+	/*
+	int scores[] = { 80,90,95,100,98 };
+	int avg = 0;
+	if (average(scores, size(scores), avg))
+		cout << avg<<endl;
+	else
+		cout << "오류" << endl;
+	*/
+	Circle donut;
+	donut.readRadius(donut);
+	cout << donut.getArea()<<endl;
 
-}
+
+	}
 

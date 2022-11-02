@@ -28,6 +28,7 @@ public:
 	void setRadius(int radius);
 	double getArea();
 	int getRadius();
+	void readRadius(Circle &circle);
 	
 };
 
@@ -42,4 +43,10 @@ double Circle::getArea() {
 int Circle::getRadius() {
 	return radius;
 }
-
+void Circle::readRadius(Circle& circle) {
+	int r = 0;
+	cout << "반지름 입력 >> ";
+	cin >> r;
+	circle.setRadius(r);
+	
+}

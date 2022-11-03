@@ -2,6 +2,10 @@
 #include<iostream>
 using namespace std;
 
+char& find(char s[], int index) {
+	return s[index];
+}
+
 Circle getCircle() {
 	Circle tem(30);
 	return tem;

@@ -2,11 +2,19 @@
 #include<string>
 #include"Circle.h"
 #include"Util2.h"
+#include"Person.h"
 using namespace std;
 // 주석 : ctrl + k + c
 // 주석해제 : ctrl + k + u
 
+void f(Person person) {
+	person.changeName("dummy");
+};
 
+Person g() {
+	Person mother(2, "jane");
+	return mother;
+};
 
 int main() {
 	/*
@@ -192,10 +200,56 @@ cout << i << '\t' << n << '\t' << refn << endl;
 	else
 		cout << "오류" << endl;
 	*/
+/*
 	Circle donut;
 	donut.readRadius(donut);
 	cout << donut.getArea()<<endl;
+	*/
+	/*
+	char name[] = "mike";
+	cout << name << endl;
 
+	find(name, 0) = 's';
+	cout << name << endl;
 
+	char& ref = find(name, 2);
+	//char& s[index] 형식으로 리턴.
+	cout << ref << endl;
+	ref = 't';
+	cout << name << endl;
+	*/
+
+	/*Circle src(30);
+	Circle desc(src);
+	cout << "원본 면적" << "\t"<<src.getArea() << endl;
+	cout << "사본 면적" << "\t" << desc.getArea() << endl;*/
+	/*
+	Person father(1, "White");
+	Person daughter(2, "Purpl");
+	cout << "daughter 객체 생성 직후 ----------" << endl;
+	father.showName();
+	daughter.showName();
+	daughter.changeName("Grace");
+	cout<< "daughter 이름을 Grace로 변경한 후 ----------" << endl;
+	father.showName();
+	daughter.showName();
+	*/
+	/*
+	Person father(1, "White");
+	Person daughter(father);
+	cout << "daughter 객체 생성 직후 ----------" << endl;
+	father.showName();
+	daughter.showName();
+	daughter.changeName("Grace");
+	cout << "daughter 이름을 Grace로 변경한 후 ----------" << endl;
+	father.showName();
+	daughter.showName();
+	*/
+	Person father(1, "white");
+	Person son = father;
+	f(father);
+	g();
+	
+	return 0;
 	}
 

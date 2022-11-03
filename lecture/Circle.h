@@ -12,6 +12,10 @@ class Circle {
 	int radius=1;
 
 public:
+	Circle(const Circle& c) {
+		this->radius = c.radius;
+		cout << "汗荤 积己磊 角青 radius = " << radius << endl;
+	}
 	Circle() {
 		radius = 1;
 		cout << "积己磊 角青 radius = " << radius << endl;

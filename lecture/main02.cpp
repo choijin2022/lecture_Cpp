@@ -15,6 +15,9 @@ Person g() {
 	Person mother(2, "jane");
 	return mother;
 };
+void half(double& n) {
+	n = n / 2;
+}
 
 int main() {
 	/*
@@ -245,11 +248,16 @@ cout << i << '\t' << n << '\t' << refn << endl;
 	father.showName();
 	daughter.showName();
 	*/
+/*
 	Person father(1, "white");
 	Person son = father;
 	f(father);
 	g();
-	
+	*/
+
+	double n = 20;
+	half(n);
+	cout << n;
 	return 0;
 	}
 

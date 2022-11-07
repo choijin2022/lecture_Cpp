@@ -7,7 +7,7 @@ class Circle
 {
 	int radius;
 public:
-	Circle(int radius=0);
+	Circle(int radius = 0);
 	~Circle();
 	int getRadius();
 	void setRadius(int radius);
@@ -36,22 +36,25 @@ double Circle::getArea() {
 	return 3.14 * radius * radius;
 }
 
-class namedCircle : Circle {
-	int radius;
+class namedCircle : public Circle {
+	
 	string name;
 public:
-	namedCircle(int radius=0, string name="") {
-		this->radius = radius;
+	namedCircle(int radius = 0, string name = "") {
+		
+		setRadius(radius);
 		this->name = name;
 	}
-	void show();
+	void set(int radius, string name);
 	string getName();
+	
 };
 
-void namedCircle::show() {
-
-	cout << "반지름이 " << radius << "이고 이름이" << name << "인 원" << endl;
-};
 string namedCircle::getName() {
 	return name;
 };
+void namedCircle::set(int radius, string name) {
+	setRadius(radius);
+	this->name = name;
+};
+

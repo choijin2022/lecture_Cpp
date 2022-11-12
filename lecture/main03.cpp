@@ -1,7 +1,9 @@
 #include <iostream>
 #include<string>
+#include"Shape.h"
 #include"Circle03.h"
 #include"Point03.h"
+
 
 int main() {
 	/*
@@ -55,8 +57,15 @@ int main() {
 	}
 	cout << "가장 면적이 큰 피자는 " << pizza[big].getName() << "입니다." << endl;
 	*/
+	/*
 	ColorPoint cp(5, 5, "red");
 	cp.setPoint(10, 20);
 	cp.Color("blue");
 	cp.show();
+	*/
+	
+	Shape* tri = new Tri();
+
+	tri->draw();
+
 }

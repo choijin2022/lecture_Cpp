@@ -3,7 +3,7 @@
 #include"Shape.h"
 #include"Circle03.h"
 #include"Point03.h"
-
+#include"Calculator.h"
 
 int main() {
 	/*
@@ -63,9 +63,15 @@ int main() {
 	cp.Color("blue");
 	cp.show();
 	*/
-	
+	/*
 	Shape* tri = new Tri();
 
 	tri->draw();
+	*/
+	Calculator handCarculator;
+	cout << "2 + 4 = " << handCarculator.carculate('+', 2, 4) << endl;
 
+	cout << "100 - 8 = " << handCarculator.carculate('-', 100, 8) << endl;
+
+	cout << "50 * 4 = " << handCarculator.carculate('*', 50, 4) << endl;
 }

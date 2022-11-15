@@ -1,5 +1,7 @@
 #include<iostream>
 #include"Circle04.h"
+#include"Point04.h"
+#include"BaseArray.h"
 using namespace std;
 
 int main() {
@@ -7,6 +9,7 @@ int main() {
 	NamedCircle waffle(3, "waffle");
 	waffle.show();
 	*/
+	/*
 	NamedCircle pizza[5];
 	int radius[5];
 	string names[5];
@@ -30,4 +33,29 @@ int main() {
 
 	}
 	cout << "가장 면적이 큰 피자는" << pizName << "입니다." << endl;
+	*/
+	/*
+	ColorPoint cp(5, 5, "RED");
+	cp.setPoint(10, 20);
+	cp.setColor("BLUE");
+	cp.show();
+	
+	//실습 4
+	ColorPoint zeroPoint;
+	zeroPoint.show();
+	ColorPoint cp2(5, 5);
+	cp2.setPoint(10, 20);
+	cp2.setColor("BLUE");
+	cp2.show();
+	*/
+	MyQueue mQ(100);
+	int n;
+	cout << "큐에 삽입할 5개의 정수를 입력하라 >> ";
+	
+	for (int i = 0; i < 5; i++) {
+		cin >> n;
+		mQ.enqueue(n);
+	}
+	cout << "큐의 용량" << mQ.capacity() << "큐의 크기" << mQ.length() << endl;
+
 }

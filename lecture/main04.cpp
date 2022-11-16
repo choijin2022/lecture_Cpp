@@ -48,6 +48,7 @@ int main() {
 	cp2.setColor("BLUE");
 	cp2.show();
 	*/
+	/*
 	MyQueue mQ(100);
 	int n;
 	cout << "큐에 삽입할 5개의 정수를 입력하라 >> ";
@@ -57,5 +58,16 @@ int main() {
 		mQ.enqueue(n);
 	}
 	cout << "큐의 용량" << mQ.capacity() << "큐의 크기" << mQ.length() << endl;
+	*/
+
+	MyStack mStack(100);
+	int m;
+	cout << "스택에 삽입할 5개의 정수를 입력하라 >> ";
+	for (int i = 0; i < 5; i++) {
+		cin >> m;
+		mStack.push(m);
+
+	}
+	cout << "스택 용량 : " << mStack.capacity() << ", 스택 크기: " << mStack.length() << endl;
 
 }

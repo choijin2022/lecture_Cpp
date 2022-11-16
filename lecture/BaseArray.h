@@ -2,7 +2,6 @@
 #include<iostream>
 
 class BaseArray {
-private:
 	int capacity;
 	int* mem;
 protected:
@@ -22,7 +21,9 @@ protected:
 	int getCapacity() {
 		return capacity;
 	}
+
 };
+
 
 
 class MyQueue : public BaseArray {
@@ -66,3 +67,34 @@ int MyQueue::capacity() {
 int MyQueue::length() {
 	return size;
 }
+
+class MyStack : public BaseArray {
+	int tos;
+public:
+	MyStack(int capacity) :BaseArray(capacity) {
+		tos = 0;
+	}
+	int capacity() {
+		return getCapacity();
+	}
+	int length() {
+		return tos;
+	}
+	void push(int n) {
+		if (tos == getCapacity()) {
+			cout << "stac full" << endl;
+			return;
+		}
+		put(tos, n);
+		tos++;
+	}
+	int pop() {
+		if (tos == 0) {
+			cout << "stac empty" << endl;
+			return -1;
+		}
+		tos--;
+		return get(tos);
+	}
+};
+

@@ -77,10 +77,11 @@ while ((c=fin2.get()) != EOF)
 cout << "읽은 바이트 수는 " << count << endl;
 fin2.close();
 */
-	
+	/*
 	const char* firstFile = "D:\\05.ect\\first.txt";
 	const char* secondFile = "D:\\05.ect\\second.ini";
 	const char* wordText = "D:\\05.ect\\word.txt";
+	*/
 	/*
 	fstream fout(firstFile, ios::out | ios::app);
 	if (!fout) {
@@ -137,7 +138,7 @@ fin2.close();
 	}
 	cout << "프로그램을 종료합니다." << endl;
 	*/
-
+	/*
 	const char* srcFile = "D:\\05.ect\\img\\해돋이춘식.jpg";
 	const char* destFile = "D:\\05.ect\\img\\test.jpg";
 	ifstream fsrc(srcFile, ios::in | ios::binary);
@@ -160,4 +161,126 @@ fin2.close();
 	cout << srcFile << "을 " << destFile << "로 복사 완료!" << endl;
 	fsrc.close();
 	fdest.close();
+	*/
+/*
+const char* file = "D:\\05.ect\\second.ini";
+
+ifstream fin;
+fin.open(file, ios::binary);
+if (!fin) {
+	cout << "열기 오류"<<endl;
+	return 0;
 }
+
+int count = 0;
+char s[32];
+while (!fin.eof()) {
+	fin.read(s, 32);
+	int n = fin.gcount();
+	cout.write(s, n);
+	count += n;
+
+}
+cout << "읽은 바이트 수는" <<count<< endl;
+fin.close();
+
+*/
+/*
+ifstream fin("D:\\05.ect\\test.txt");
+if (!fin) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+int ch;
+
+while ((ch = fin.get()) != EOF) {
+	cout.put(ch);
+	
+}
+fin.close();
+
+*/
+/*
+ifstream fin("D:\\05.ect\\second.ini");
+if (!fin) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+string line;
+int lineNumber = 1;
+
+while(getline(fin, line)) {
+	
+	cout << lineNumber << " : " << line << endl;
+	lineNumber++;
+}
+fin.close();
+
+*/
+/*
+ifstream fin("D:\\05.ect\\second.ini");
+if (!fin) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+
+
+ofstream fout("D:\\05.ect\\first.txt");
+if (!fout) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+
+int ch;
+cout << "읽기 시작" << endl;
+while ((ch = fin.get()) != EOF) {
+	ch = (char)toupper(ch);
+	cout << (char)ch;
+	fout.put(ch);
+	
+
+}
+
+fout.close();
+fin.close();
+
+*/
+
+ifstream fin("D:\\05.ect\\second.ini",ios::in|ios::binary);
+if (!fin) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+
+
+ofstream fout("D:\\05.ect\\first.txt",ios::out,ios::binary);
+if (!fout) {
+	cout << "열기 오류" << endl;
+	return 0;
+}
+
+
+fin.seekg(0, ios::end);
+int finSize = fin.tellg();
+fin.seekg(0, ios::beg);
+
+int copyUnit = finSize / 10;
+char* buf = new char[copyUnit];
+cout << "복사 시작" << endl;
+for (int i = 0; i < 10; i++) {
+	fin.read(buf, copyUnit);
+	int realByte = fin.gcount();
+	fout.write(buf, realByte);
+	cout << '.' << realByte << "B " << (i + 1) * 10 << "% " << endl;
+	if (realByte < copyUnit)
+		break;
+}
+cout << finSize << "B 복사 완료" <<  endl;
+
+delete[] buf;
+fin.close();
+fout.close();
+
+}
+
+
